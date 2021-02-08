@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
+          "version": "5.4.1"
+        }
+      },
+      {
+        "package": "CGDomains",
+        "repositoryURL": "https://github.com/nobleidea/CGDomains",
+        "state": {
+          "branch": null,
+          "revision": "b1ed33d5f5e43204e8cbc415dac96d6447d2ce12",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "CGNetwork",
+        "repositoryURL": "https://github.com/nobleidea/CGNetwork",
+        "state": {
+          "branch": null,
+          "revision": "b8591b0593d81cc3930392327baa48e617b878ef",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
