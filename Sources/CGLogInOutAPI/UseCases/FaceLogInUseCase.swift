@@ -15,13 +15,13 @@ final class FaceLogInUseCase: CGDomains.LogInUseCase {
         self.request = request
     }
     
-    func login(parameters: Dictionary<String, Any>, completion: @escaping ((LogIn?) -> Void)) {
+    func login(parameters: Dictionary<String, Any>, completion: @escaping ((LogIn?, Error?) -> Void)) {
         request.observer { response in
             switch response.result {
             case .success(let logIn):
-                completion(logIn)
-            case .failure(_):
-                completion(nil)
+                completion(logIn, nil)
+            case .failure(let error):
+                completion(nil, error)
             }
         }.observer { _ in
             
