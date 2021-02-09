@@ -27,24 +27,26 @@ struct LogInAPIResponse<T: Decodable> {
                 self.result = LogInAPIResult<T>.success(decoded)
             } catch  {
                 if let error = response.error {
-                    self.result = LogInAPIResult<T>.failure(LogInAPIError(.unknown, error: error))
+                    self.result = LogInAPIResult<T>.failure(LogInAPIError(.unknown, errorMessage: error.localizedDescription))
                 } else {
-                    fatalError()
+//                    fatalError()
+                    self.result = .failure(.init(.unknown, errorMessage: "TEST"))
                 }
             }
         } else {
-            fatalError()
+//            fatalError()
+            self.result = .failure(.init(.blahblah, errorMessage: "test"))
         }
     }
 }
 
 struct LogInAPIError: Error {
     private let errorType: CGNetwork.ErrorType
-    private let error: Error
+    private let errorMessage: String
     
-    init(_ errorType: CGNetwork.ErrorType, error: Error) {
+    init(_ errorType: CGNetwork.ErrorType, errorMessage: String) {
         self.errorType = errorType
-        self.error = error
+        self.errorMessage = errorMessage
     }
 }
 
